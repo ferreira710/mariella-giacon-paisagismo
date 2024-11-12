@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes kenburns-top {
+  0% {
+    transform: scale(1.25) translateY(-25px);
+    transform-origin: top;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    transform-origin: 50% 16%;
+  }
+}
+
+#kenburns-top {
+  animation: kenburns-top 5s ease-out both;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  .swiper {
+    overflow: clip;
+  }
+
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+    padding: 24px;
+    &:hover {
+      background: black;
+    }
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+}

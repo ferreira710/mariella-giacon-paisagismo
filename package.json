@@ -1,24 +1,52 @@
 {
-  "name": "mariella-paisagismo",
+  "name": "mariella-giacon-paisagismo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "lint": "next lint",
     "start": "next start",
-    "lint": "next lint"
+    "clean:dev": "rm -rf node_modules package-lock.json && npm install",
+    "biome:fix": "biome check --fix ./src",
+    "prepare": "husky",
+    "knip": "knip"
   },
   "dependencies": {
+    "@nextui-org/image": "^2.0.32",
+    "@nextui-org/navbar": "^2.0.37",
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/system": "^2.2.6",
+    "@nextui-org/theme": "^2.2.11",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-visually-hidden": "^1.1.0",
+    "framer-motion": "^11.11.11",
+    "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "react-icons": "^5.3.0",
+    "react-scroll": "^1.9.0",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
-  }
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-scroll": "^1.8.10",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "husky": "^9.1.6",
+    "knip": "^5.36.7",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  },
+  "lint-staged": {
+    "*": ["biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"]
+  },
+  "trustedDependencies": ["@biomejs/biome", "sharp"]
 }
